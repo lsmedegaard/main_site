@@ -1,0 +1,16 @@
+body {
+  background-color: #0b0039;
+}
+
+#animation {
+  color: azure;
+}
+#tekst {
+  color: azure;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
