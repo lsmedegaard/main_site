@@ -4,6 +4,24 @@ body {
   background: radial-gradient(ellipse at bottom, #100051, #111);
   overflow: hidden;
 }
+#mainNav {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  justify-content: flex-end;
+  height: 5vw;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 2s cubic-bezier(0, 1, 1, 1);
+}
+#mainNav > svg {
+  transform: scale(0.5);
+  color: aliceblue;
+  cursor: pointer;
+  height: 5vw;
+}
 #container {
   position: relative;
 }
@@ -15,11 +33,14 @@ body {
   /* color: rgb(242, 245, 98); */
 }
 #tekst h1 {
-  background: linear-gradient(to right, rgb(255, 255, 0), rgba(255, 0, 0));
+  background: linear-gradient(to right, rgb(0, 52, 222), rgba(255, 0, 0));
   color: transparent;
   -webkit-background-clip: text;
 }
 
+.hide {
+  opacity: 0;
+}
 #svgWrapper {
   position: relative;
 }
@@ -54,5 +75,25 @@ body {
   }
   100% {
     transform: translate3d(85px, 0, 0);
+
+span {
+  display: inline-block;
+}
+.fadeIn {
+  animation: fadeIn 1s;
+  animation-timing-function: cubic-bezier(0.55, 1.49, 1, 1.1);
+  animation-fill-mode: backwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(200%) skewX(0);
+  }
+  80% {
+    transform: translateY(-40%) skewX(34deg);
+  }
+  100% {
+    opacity: 100;
+    transform: translateY(0);
   }
 }
