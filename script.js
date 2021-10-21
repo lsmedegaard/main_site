@@ -5,41 +5,55 @@ document.addEventListener("DOMContentLoaded", start);
 async function start() {
   let response = await fetch("images/cover.svg");
   let svgData = await response.text();
-  document.querySelector("#animation").innerHTML = svgData;
+  document.querySelector("#svgWrapper").innerHTML = svgData;
   manipulateSVG();
 }
 
 function manipulateSVG() {
-  console.log("lol");
   document.querySelectorAll("#a").forEach((elem) => {
-    elem.style.fill = "green";
+
     elem.addEventListener("mouseover", removeRight);
   });
   document.querySelectorAll("#b").forEach((elem) => {
-    elem.style.fill = "green";
+
     elem.addEventListener("mouseover", removeLeft);
   });
 }
 
 const propA = {
-  duration: 1000,
+  duration: 2000,
   iterations: 1,
   direction: "alternate",
-  easing: "ease-in-out",
+  easing: "cubic-bezier(0, 1, 1, 1)",
 };
 
-const keyB = { transform: "translate3D(50%, 50%, 0)", color: "#000" };
-const keyA = { transform: "translate3D(-50%, -50%, 0)", color: "#000" };
+const keyA = { transform: "translate3D(20%, 20%, 0)" };
+const keyB = { transform: "translate3D(-20%, -20%, 0)"};
 
 function removeRight() {
-  console.log("lol");
-  document.querySelectorAll("#a").forEach((elem) => elem.animate(keyB, propA));
+  const animation = document.querySelector("#a").animate(keyA, propA);
+  animation.onfinish = event => {
+    document.querySelector("#a").style.transform = "translate3D(20%, 20%, 0)"
+    event.currentTarget.pause()
+  }
 }
 
 function removeLeft() {
-  console.log("lol");
-  document.querySelectorAll("#b").forEach((elem) => elem.animate(keyA, propA));
+    const animation = document.querySelector("#b").animate(keyB, propA);
+    animation.onfinish = event => {
+      document.querySelector("#b").style.transform = "translate3D(-20%, -20%, 0)"
+      event.currentTarget.pause()
+    }
 }
+
+// const text = document.querySelector("#tekstAnimation");
+// let textArray = text.split()
+// console.log(textArray, "test")
+
+// const strText = text.textContent;
+// const splitText = strText.split("");
+
+
 
 // const propA = {
 //   duration: 3000,
@@ -47,7 +61,7 @@ function removeLeft() {
 // };
 
 // const keyA = [
-//   { transform: "rotate(0) translate3D(-50%, -50%, 0)", color: "#000" },
+//   { transform: "rotate(0) translate3D(-40%, -40%, 0)", color: "#000" },
 //   { color: "#431236", offset: 0.2 },
 // ];
 

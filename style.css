@@ -1,25 +1,25 @@
 body {
-  height: 100vw;
+  height: 100vh;
+  margin: 0;
   background: radial-gradient(ellipse at bottom, #100051, #111);
+  overflow: hidden;
 }
-
-#animation {
+#container {
   position: relative;
-  margin-top: 10vw;
-  color: rgb(242, 245, 98);
-}
-#trekantC {
-  position: absolute;
-  left: 10vw;
 }
 #tekst {
-  margin-top: 20vw;
-  color: rgb(242, 245, 98);
+  position: absolute;
+  font-size: 4rem;
+  left: 38vw;
+  top: 16vw;
+  /* color: rgb(242, 245, 98); */
+}
+#tekst h1 {
+  background: linear-gradient(to right, rgb(255, 255, 0), rgba(255, 0, 0));
+  color: transparent;
+  -webkit-background-clip: text;
 }
 
-#container {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+#svgWrapper {
+  position: relative;
 }
