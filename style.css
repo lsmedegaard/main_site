@@ -25,17 +25,25 @@ body {
 #container {
   position: relative;
 }
-#tekst {
+#tekstAnimation {
+  margin: 0;
+  font-family: Roboto;
   position: absolute;
   font-size: 4rem;
-  left: 38vw;
-  top: 16vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-35%, -100%);
   /* color: rgb(242, 245, 98); */
 }
-#tekst h1 {
+/* #tekstAnimation {
   background: linear-gradient(to right, rgb(0, 52, 222), rgba(255, 0, 0));
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
   color: transparent;
   -webkit-background-clip: text;
+} */
+
+#tekstAnimation span {
+  /* color: rgb(0, 0, 255); */
 }
 
 .hide {
@@ -49,6 +57,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100vw;
+  z-index: -1;
 }
 .parallax > use {
   animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
@@ -75,10 +84,12 @@ body {
   }
   100% {
     transform: translate3d(85px, 0, 0);
-
+  }
+}
 span {
   display: inline-block;
 }
+
 .fadeIn {
   animation: fadeIn 1s;
   animation-timing-function: cubic-bezier(0.55, 1.49, 1, 1.1);
@@ -96,4 +107,15 @@ span {
     opacity: 100;
     transform: translateY(0);
   }
+}
+
+.fadeFromBelow {
+  opacity: 0;
+  transform: translateY(50%);
+  transition: all 1.3s cubic-bezier(0, 0, 0.14, 2);
+}
+
+.fadeFromBelowActive {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -2,6 +2,8 @@
 
 document.addEventListener("DOMContentLoaded", start);
 
+let welcome = false
+
 async function start() {
   let response = await fetch("images/cover.svg");
   let svgData = await response.text();
@@ -52,6 +54,7 @@ function removeRight() {
     document.querySelector("#a").style.transform = "translate3D(20%, 20%, 0)";
     event.currentTarget.pause();
   };
+  if (!welcome) startWelcome()
 }
 
 function removeLeft() {
@@ -60,44 +63,72 @@ function removeLeft() {
     document.querySelector("#b").style.transform = "translate3D(-20%, -20%, 0)";
     event.currentTarget.pause();
   };
+  if (!welcome) startWelcome()
 }
+
+function startWelcome() {
+    welcome = true
+    const message = 'Hi! Welcome to my site'.split('')
+    const h1 = document.querySelector('#tekstAnimation')
+    message.forEach((char, index) => {
+        const span = document.createElement('span')
+        span.classList.add('fadeFromBelow')
+        span.innerHTML = char === ' ' ? '&nbsp' : char
+        span.style.color = `rgb(${5 * index}, ${5 * index}, 255)`
+        h1.append(span)
+        setTimeout(() => span.classList.add('fadeFromBelowActive'), 100 * index)
+    })
+}
+
+// function startWelcome() {
+//     const message = 'Welcome to my site'
+//     document.querySelector("#tekstAnimation").style.width = message.length + 'ch'
+//     const interval = setInterval(() => {
+//         const messageLength = document.querySelector("#tekstAnimation").innerHTML.length
+//         if (messageLength === message.length) clearInterval(interval)
+//         else if (message[messageLength] === ' ') document.querySelector("#tekstAnimation").innerHTML += ` ${message[messageLength + 1]}`
+//         else document.querySelector("#tekstAnimation").innerHTML += message[messageLength]
+//     }, 200)
+// }
 
 //functioner til animation af velkomsthilsen
-document.addEventListener("DOMContentLoaded", startWelcome);
-function startWelcome() {
-  console.log("this is starting, les go");
-  let text = getHtmlText();
-  deleteHtmlText();
-  let textArray = stringToArray(text);
+// document.addEventListener("DOMContentLoaded", startWelcome);
+// function startWelcome() {
+//   console.log("this is starting, les go");
+//   let text = getHtmlText();
+//   deleteHtmlText();
+//   let textArray = stringToArray(text);
 
-  appendChar(textArray);
-  /* setAnimationDelay(); */
-}
+//   appendChar(textArray);
+//   /* setAnimationDelay(); */
+// }
 
-function appendChar(array) {
-  for (let i = 0; i < array.length; i++) {
-    let charSpan = document.createElement("span");
-    charSpan.append(array[i]);
-    charSpan.classList.add("fadeIn");
+// function appendChar(array) {
+//   for (let i = 0; i < array.length; i++) {
+//     let charSpan = document.createElement("span");
+//     charSpan.append(array[i]);
+//     charSpan.classList.add("fadeIn");
 
-    charSpan.style.animationDelay = `${i}` * 300 + "ms";
+//     charSpan.style.animationDelay = `${i}` * 300 + "ms";
 
-    document.querySelector("h1").appendChild(charSpan);
-  }
-}
+//     document.querySelector("h1").appendChild(charSpan);
+//   }
+// }
 
-function getHtmlText() {
-  let htmlText = document.querySelector("h1").innerText;
-  return htmlText;
-}
+// function getHtmlText() {
+//   let htmlText = document.querySelector("h1").innerText;
+//   return htmlText;
+// }
 
-function deleteHtmlText() {
-  document.querySelector("#tekstAnimation").innerText = "";
-  console.log("deleting text");
-}
+// function deleteHtmlText() {
+//   document.querySelector("#tekstAnimation").innerText = "";
+//   console.log("deleting text");
+// }
 
-function stringToArray(string) {
-  let charArray = string.split("");
-  console.log(charArray);
-  return charArray;
-}
+// function stringToArray(string) {
+//   let charArray = string.split("");
+//   console.log(charArray);
+//   return charArray;
+// }
+
+
