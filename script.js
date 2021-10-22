@@ -2,40 +2,31 @@
 
 document.addEventListener("DOMContentLoaded", start);
 
-let welcome = false
+let welcome = false;
 
 async function start() {
   let response = await fetch("images/cover.svg");
   let svgData = await response.text();
   let menuResponse = await fetch("images/menu.svg");
   let menuSvgData = await menuResponse.text();
-  document.querySelector("nav").innerHTML = menuSvgData;
+  document.querySelector("#mainNav").innerHTML = menuSvgData;
   document.querySelector("#svgWrapper").innerHTML = svgData;
+
   manipulateSVG();
 }
 
 function manipulateSVG() {
-  document.querySelectorAll("#a").forEach((elem) => {
-    elem.addEventListener("mouseover", removeRight);
-  });
-  document.querySelectorAll("#circle, #bars").forEach((elem) => elem.addEventListener("mouseover", hover));
-  document.querySelectorAll("#circle").forEach((elem) => elem.addEventListener("mouseout", hoverOut));
-  document.querySelectorAll("#circle").forEach((elem) => elem.addEventListener("click", options));
-  document.querySelectorAll("#b").forEach((elem) => {
-    elem.addEventListener("mouseover", removeLeft);
-  });
-  console.log(menu);
-}
+  document.querySelectorAll("#a").forEach((elem) => elem.addEventListener("mouseover", removeRight));
+  document.querySelectorAll("#b").forEach((elem) => elem.addEventListener("mouseover", removeLeft));
+  document.querySelector("#menu").addEventListener("click", options);
+  document.querySelector("#options > img").addEventListener("animationend", () => document.querySelector("#options a").classList.remove("hide"));
 
-function hover() {
-  document.querySelector("#circle").classList.remove("hide");
-}
-function hoverOut() {
-  document.querySelector("#circle").classList.add("hide");
+  console.log(menu);
 }
 
 function options() {
   console.log("lol");
+  document.querySelector("#options > img").classList.add("fadeIn");
 }
 const propA = {
   duration: 2000,
@@ -54,7 +45,7 @@ function removeRight() {
     document.querySelector("#a").style.transform = "translate3D(20%, 20%, 0)";
     event.currentTarget.pause();
   };
-  if (!welcome) startWelcome()
+  if (!welcome) startWelcome();
 }
 
 function removeLeft() {
@@ -63,21 +54,21 @@ function removeLeft() {
     document.querySelector("#b").style.transform = "translate3D(-20%, -20%, 0)";
     event.currentTarget.pause();
   };
-  if (!welcome) startWelcome()
+  if (!welcome) startWelcome();
 }
 
 function startWelcome() {
-    welcome = true
-    const message = 'Hi! Welcome to my site'.split('')
-    const h1 = document.querySelector('#tekstAnimation')
-    message.forEach((char, index) => {
-        const span = document.createElement('span')
-        span.classList.add('fadeFromBelow')
-        span.innerHTML = char === ' ' ? '&nbsp' : char
-        span.style.color = `rgb(${5 * index}, ${5 * index}, 255)`
-        h1.append(span)
-        setTimeout(() => span.classList.add('fadeFromBelowActive'), 100 * index)
-    })
+  welcome = true;
+  const message = "Hi! Welcome to my site".split("");
+  const h1 = document.querySelector("#tekstAnimation");
+  message.forEach((char, index) => {
+    const span = document.createElement("span");
+    span.classList.add("fadeFromBelow");
+    span.innerHTML = char === " " ? "&nbsp" : char;
+    span.style.color = `rgb(${5 * index}, ${5 * index}, 255)`;
+    h1.append(span);
+    setTimeout(() => span.classList.add("fadeFromBelowActive"), 100 * index);
+  });
 }
 
 // function startWelcome() {
@@ -130,5 +121,3 @@ function startWelcome() {
 //   console.log(charArray);
 //   return charArray;
 // }
-
-
