@@ -3,7 +3,7 @@
 document.addEventListener("DOMContentLoaded", start);
 
 let elementsToPaint = [];
-let welcome = false; 
+let welcome = false;
 
 async function start() {
   let response = await fetch("cover2.svg");
@@ -15,9 +15,9 @@ async function start() {
   document.querySelector("nav").innerHTML = menuSvgData;
   document.querySelector("#svgWrapper").innerHTML = svgData;
   document.querySelector("#shoeConfig").innerHTML = ShoeSvgData;
- 
-  removeRight()
-  removeLeft()
+
+  removeRight();
+  removeLeft();
 
   manipulateSVG();
 }
@@ -32,12 +32,12 @@ function manipulateSVG() {
   // document.querySelector("#tekstanimation").addEventListener("animationend", () => document.querySelector("#portraet").classList.add("fadeUp"))
 
   //SHOE CONFIG
-  document.querySelectorAll("#shoeConfig svg path").forEach(element => {
-    element.style.fill = 'rgba(0, 0, 0, 0)'
-    element.addEventListener("mouseover", mouseOver)
-    element.addEventListener("mouseout", mouseOut)
-    element.addEventListener("click", pickPart)
-})
+  document.querySelectorAll("#shoeConfig svg path").forEach((element) => {
+    element.style.fill = "rgba(0, 0, 0, 0)";
+    element.addEventListener("mouseover", mouseOver);
+    element.addEventListener("mouseout", mouseOut);
+    element.addEventListener("click", pickPart);
+  });
 
   // document.querySelector("#menu").addEventListener("click", options);
 }
@@ -56,7 +56,7 @@ const propA = {
   iterations: 1,
   direction: "alternate",
   easing: "cubic-bezier(0, 1, 1, 1)",
-  composite: 'add'
+  composite: "add",
 };
 
 const keyA = { transform: "translate3D(100%, -20%, 0)" };
@@ -76,7 +76,7 @@ function removeLeft() {
   const animation = document.querySelector("#b").animate(keyB, propA);
   animation.onfinish = (event) => {
     document.querySelector("#b").style.transform = "translate3D(-20%, 20%, 0)  rotateX(43deg)";
-    document.querySelector("#contentContainer").classList.remove("hide")
+    document.querySelector("#contentContainer").classList.remove("hide");
     event.currentTarget.pause();
   };
   if (!welcome) infoMessage();
@@ -84,8 +84,7 @@ function removeLeft() {
 
 function infoMessage() {
   welcome = true;
-  const message = 
-    `My name is Lasse Mark Smedegaard
+  const message = `My name is Lasse Mark Smedegaard
     $i'm a frontend developer and multimediedesigner
     $
     $ My primary areas are:
@@ -95,12 +94,13 @@ function infoMessage() {
     $- Content Creation
     $- Digital Marketing`.split("");
   const p = document.querySelector("#tekstAnimation");
-  let gradientIndex = 0
+  let gradientIndex = 0;
   message.forEach((char, index) => {
-    if (char === '$') {
-      const linebreak = document.createElement("br")
-      p.append(linebreak)
-      gradientIndex = 0
+    if (char === "$") {
+      const linebreak = document.createElement("br");
+
+      p.append(linebreak);
+      gradientIndex = 0;
     } else {
       const span = document.createElement("span");
       span.classList.add("fadeFromBelow");
@@ -108,48 +108,56 @@ function infoMessage() {
       span.style.color = `rgb(${4 * (gradientIndex + 25)}, ${4 * (gradientIndex + 25)}, 255)`;
       p.append(span);
       setTimeout(() => span.classList.add("fadeFromBelowActive"), 40 * index);
-      gradientIndex++
-
+      gradientIndex++;
     }
   });
-  document.querySelector("#portraet").classList.add("fadeUp")
 }
-
-
-
-
 
 //SHOE CONFIG
-function mouseOver (event) {
-  console.log(event.currentTarget.id)
-  event.target.style.fill = "rgba(0, 255, 0, 0.1)"
-  if(event.currentTarget.id === "sole"){
-      document.querySelectorAll("#sole").forEach(element => element.style.fill = "rgba(0, 255, 0, 0.1)")
-  } else if(event.currentTarget.id === "LOGO"){
-      document.querySelectorAll("#LOGO").forEach(element => element.style.fill = "rgba(0, 255, 0, 0.1)")
-  } else if(event.currentTarget.id === "backlayer"){
-      document.querySelectorAll("#backlayer").forEach(element => element.style.fill = "rgba(0, 255, 0, 0.1)")
-  } else if(event.currentTarget.id === "shoelace"){
-      document.querySelectorAll("#shoelace").forEach(element => element.style.fill = "rgba(0, 255, 0, 0.1)")
-  } else if(event.currentTarget.id === "frontLayer"){
-      document.querySelectorAll("#frontLayer").forEach(element => element.style.fill = "rgba(0, 255, 0, 0.1)")
-  } else if(event.currentTarget.id === "ribbon"){
-      document.querySelectorAll("#ribbon").forEach(element => element.style.fill = "rgba(0, 255, 0, 0.1)")
-  } else if(event.currentTarget.id === "ribbonTag"){
-      document.querySelectorAll("#ribbonTag").forEach(element => element.style.fill = "rgba(0, 255, 0, 0.1)")
-  } else if(event.currentTarget.id === "topSole"){
-      document.querySelectorAll("#topSole").forEach(element => element.style.fill = "rgba(0, 255, 0, 0.1)")
-  } 
+function mouseOver(event) {
+  console.log(event.currentTarget.id);
+  event.target.style.fill = "rgba(0, 255, 0, 0.1)";
+  if (event.currentTarget.id === "sole") {
+    document.querySelectorAll("#sole").forEach((element) => (element.style.fill = "rgba(0, 255, 0, 0.1)"));
+  } else if (event.currentTarget.id === "LOGO") {
+    document.querySelectorAll("#LOGO").forEach((element) => (element.style.fill = "rgba(0, 255, 0, 0.1)"));
+  } else if (event.currentTarget.id === "backlayer") {
+    document.querySelectorAll("#backlayer").forEach((element) => (element.style.fill = "rgba(0, 255, 0, 0.1)"));
+  } else if (event.currentTarget.id === "shoelace") {
+    document.querySelectorAll("#shoelace").forEach((element) => (element.style.fill = "rgba(0, 255, 0, 0.1)"));
+  } else if (event.currentTarget.id === "frontLayer") {
+    document.querySelectorAll("#frontLayer").forEach((element) => (element.style.fill = "rgba(0, 255, 0, 0.1)"));
+  } else if (event.currentTarget.id === "ribbon") {
+    document.querySelectorAll("#ribbon").forEach((element) => (element.style.fill = "rgba(0, 255, 0, 0.1)"));
+  } else if (event.currentTarget.id === "ribbonTag") {
+    document.querySelectorAll("#ribbonTag").forEach((element) => (element.style.fill = "rgba(0, 255, 0, 0.1)"));
+  } else if (event.currentTarget.id === "topSole") {
+    document.querySelectorAll("#topSole").forEach((element) => (element.style.fill = "rgba(0, 255, 0, 0.1)"));
+  }
 }
 
-function mouseOut () {
-      document.querySelectorAll("#shoeConfig > svg path").forEach(element => {
-          if (!elementsToPaint.includes(element)) element.style.fill = "rgba(0, 0, 0 , 0)"
-      })
+function mouseOut() {
+  document.querySelectorAll("#shoeConfig > svg path").forEach((element) => {
+    if (!elementsToPaint.includes(element)) element.style.fill = "rgba(0, 0, 0 , 0)";
+  });
+}
 
+function convertHexToRgb(hexColor) {
+  const rPart = hexColor.substr(1, 2);
+  const gPart = hexColor.substr(3, 2);
+  const bPart = hexColor.substr(5);
+  const r = parseInt(rPart, 16);
+  const g = parseInt(gPart, 16);
+  const b = parseInt(bPart, 16);
+  return [r, g, b];
 }
-function pickPart (event) {
-  const elements = document.querySelectorAll(`#${event.target.id}`)
-  elementsToPaint.push(...elements)
-  console.log("elementstopaint", elementsToPaint)
+
+function pickPart(event) {
+  const elements = document.querySelectorAll(`#${event.target.id}`);
+  elementsToPaint.push(...elements);
+  // console.log("elementstopaint", elementsToPaint);
 }
+
+const input = document.querySelector("#favcolor");
+console.log("input", input);
+input.addEventListener("input", function () {});
