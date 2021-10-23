@@ -33,12 +33,12 @@ body {
 }
 #tekstAnimation {
   margin: 0;
-  font-family: Roboto;
+  font-family: Poppins;
+  font-weight: 900;
   position: absolute;
-  font-size: 4rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-35%, -100%);
+  font-size: 3rem;
+  top: 40%;
+  left: 33%;
   /* color: rgb(242, 245, 98); */
 }
 /* #tekstAnimation {
@@ -70,13 +70,55 @@ body {
   right: 0;
 }
 
-#options > a {
+#hvem {
   position: absolute;
   top: 4vw;
-  right: 2vw;
-  font-size: 2rem;
+  right: 5vw;
+  font-size: 1rem;
   z-index: 1;
+  text-decoration: none;
+  font-weight: 520;
+  font-family: poppins;
+  background: linear-gradient(to right, rgb(121, 153, 211), rgb(255, 254, 254));
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+  color: transparent;
+  -webkit-background-clip: text;
 }
+#kontakt {
+  position: absolute;
+  top: 7vw;
+  right: 2vw;
+  font-size: 1rem;
+  z-index: 1;
+  text-decoration: none;
+  font-family: poppins;
+  font-weight: 520;
+  background: linear-gradient(to right, rgb(121, 153, 211), rgb(255, 254, 254));
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+#hvem:hover {
+  background: linear-gradient(to top, rgb(134, 0, 0), rgb(255, 254, 254));
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+#kontakt:hover {
+  background: linear-gradient(to top, rgb(134, 0, 0), rgb(255, 254, 254));
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+a {
+  font-family: poppins;
+  background: linear-gradient(to right, rgb(0, 52, 222), rgb(255, 254, 254));
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
 .waves {
   position: absolute;
   bottom: 0;
@@ -141,4 +183,13 @@ span {
 .fadeFromBelowActive {
   opacity: 1;
   transform: translateY(0);
+}
+
+a:hover {
+  color: black;
+}
+@media (max-width: 1280px) {
+  html {
+    font-size: 15px;
+  }
 }

@@ -11,15 +11,17 @@ async function start() {
   let menuSvgData = await menuResponse.text();
   document.querySelector("#mainNav").innerHTML = menuSvgData;
   document.querySelector("#svgWrapper").innerHTML = svgData;
+  removeRight()
+  removeLeft()
 
   manipulateSVG();
 }
 
 function manipulateSVG() {
-  document.querySelectorAll("#a").forEach((elem) => elem.addEventListener("mouseover", removeRight));
-  document.querySelectorAll("#b").forEach((elem) => elem.addEventListener("mouseover", removeLeft));
   document.querySelector("#menu").addEventListener("click", options);
   document.querySelector("#options > img").addEventListener("animationend", () => document.querySelector("#options a").classList.remove("hide"));
+  document.querySelector("#options > img").addEventListener("animationend", () => document.querySelector("#kontakt").classList.remove("hide"));
+  // document.querySelector("#tekstAnimation").addEventListener("animationend", () => document.querySelector("#portraet").classList.remove("fadeUp"));
 
   console.log(menu);
 }
@@ -55,6 +57,7 @@ function removeLeft() {
     event.currentTarget.pause();
   };
   if (!welcome) startWelcome();
+
 }
 
 function startWelcome() {
@@ -62,12 +65,17 @@ function startWelcome() {
   const message = "Hi! Welcome to my site".split("");
   const h1 = document.querySelector("#tekstAnimation");
   message.forEach((char, index) => {
-    const span = document.createElement("span");
-    span.classList.add("fadeFromBelow");
-    span.innerHTML = char === " " ? "&nbsp" : char;
-    span.style.color = `rgb(${5 * index}, ${5 * index}, 255)`;
-    h1.append(span);
-    setTimeout(() => span.classList.add("fadeFromBelowActive"), 100 * index);
+    if (char === '$') {
+      const linebreak = document.createElement("br")
+      h1.append(linebreak)
+    } else {
+      const span = document.createElement("span");
+      span.classList.add("fadeFromBelow");
+      span.innerHTML = char === " " ? "&nbsp" : char;
+      span.style.color = `rgb(${5 * index}, ${5 * index}, 255)`;
+      h1.append(span);
+      setTimeout(() => span.classList.add("fadeFromBelowActive"), 100 * index);
+    }
   });
 }
 
