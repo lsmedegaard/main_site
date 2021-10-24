@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 233 472">
+	   <defs>
+
+
+    <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgb(40,40,40);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(0, 0, 0);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Lag_1" data-name="Lag 1">
+      <path d="M.5.5h232a0,0,0,0,1,0,0v471a0,0,0,0,1,0,0H49.28A48.78,48.78,0,0,1,.5,422.72V.5A0,0,0,0,1,.5.5Z" fill="url(#grad6)" />
+    </g>
+  </g>
+</svg>

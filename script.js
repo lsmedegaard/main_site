@@ -2,12 +2,14 @@
 
 document.addEventListener("DOMContentLoaded", start);
 
+let optionsClicked = false;
+
 let welcome = false;
 
 async function start() {
   let response = await fetch("images/cover.svg");
   let svgData = await response.text();
-  let menuResponse = await fetch("images/menu.svg");
+  let menuResponse = await fetch("/hvem/menu.svg");
   let menuSvgData = await menuResponse.text();
   document.querySelector("#mainNav").innerHTML = menuSvgData;
   document.querySelector("#svgWrapper").innerHTML = svgData;
@@ -18,16 +20,30 @@ async function start() {
 }
 
 function manipulateSVG() {
-  document.querySelector("#menu").addEventListener("click", options);
-  document.querySelector("#options > img").addEventListener("animationend", () => document.querySelector("#options a").classList.remove("hide"));
-  document.querySelector("#options > img").addEventListener("animationend", () => document.querySelector("#kontakt").classList.remove("hide"));
-  // document.querySelector("#tekstAnimation").addEventListener("animationend", () => document.querySelector("#portraet").classList.remove("fadeUp"));
+  document.querySelectorAll("#circle, #bars").forEach((elem) => elem.addEventListener("mouseover", () => document.querySelectorAll('#circle, #bars').forEach(elem => elem.classList.remove('hide'))));
+  document.querySelectorAll("#circle, #bars").forEach((elem) => elem.addEventListener("mouseout", () => document.querySelectorAll('#circle').forEach(elem => elem.classList.add('hide'))));
 
-  console.log(menu);
+  document.querySelector("#menu").addEventListener("click", () => {
+    optionsClicked = !optionsClicked
+    if (optionsClicked === true) {
+      document.querySelector('#options > img').classList.add("fadeIn");
+      document.querySelector('#options > img').addEventListener("animationend", () => document.querySelector("#kontakt").classList.remove("hide"));
+      document.querySelector('#options > img').addEventListener("animationend", () => document.querySelector("#startside").classList.remove("hide"));
+      document.querySelector('#options > img').addEventListener("animationend", () => document.querySelector("#hvem").classList.remove("hide"));
+    }else {
+      document.querySelector('#options > img').classList.remove("fadeIn");
+      document.querySelector('#kontakt').classList.add("hide");
+      document.querySelector('#hvem').classList.add("hide");
+      document.querySelector('#startside').classList.add("hide");
+
+    }})
+
+
+
+
 }
 
 function options() {
-  console.log("lol");
   document.querySelector("#options > img").classList.add("fadeIn");
 }
 const propA = {

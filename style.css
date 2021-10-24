@@ -4,30 +4,75 @@ body {
   background: radial-gradient(ellipse at bottom, #100051, #111);
   overflow: hidden;
 }
+/* MENUEN */
 #mainNav {
+  display: flex;
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
+  width: 100vw;
+  justify-content: flex-end;
   height: 5vw;
-  z-index: 2;
+  z-index: 3;
   opacity: 0;
   transition: opacity 2s cubic-bezier(0, 1, 1, 1);
 }
-
-#circle {
-  opacity: 0;
-}
-
-#mainNav:hover #circle {
-  opacity: 1;
-}
-
 #mainNav > svg {
-  transform: scale(0.5);
+  transform: scale(0.6);
   color: aliceblue;
   cursor: pointer;
   height: 5vw;
 }
+#options {
+  position: relative;
+}
+#options > img {
+  opacity: 0;
+  position: absolute;
+  width: 20vw;
+  height: 20vw;
+  top: -4vw;
+  right: -25vw;
+}
+#startside {
+  position: absolute;
+  top: 5.4vw;
+  right: 1.8vw;
+  font-size: 1rem;
+  z-index: 4;
+  text-decoration: none;
+  font-family: poppins;
+  color: rgb(198, 199, 209);
+}
+#hvem {
+  position: absolute;
+  top: 8.8vw;
+  right: 1.72vw;
+  font-size: 1rem;
+  z-index: 4;
+  text-decoration: none;
+  font-family: poppins;
+  color: rgb(198, 199, 209);
+}
+#kontakt {
+  position: absolute;
+  top: 12.3vw;
+  right: 1.72vw;
+  font-size: 1rem;
+  z-index: 4;
+  text-decoration: none;
+  font-family: poppins;
+  color: rgb(198, 199, 209);
+}
+
+#hvem:hover,
+#kontakt:hover,
+#startside:hover {
+  text-shadow: #269912 0.1vw 0.1vw 0.01vw;
+}
+
+/* MENU SLUT */
+
 #container {
   position: relative;
 }
@@ -57,66 +102,6 @@ body {
 }
 #svgWrapper {
   position: relative;
-}
-
-#options {
-  position: relative;
-}
-#options > img {
-  opacity: 0;
-  position: fixed;
-  width: 15vw;
-  top: 0;
-  right: 0;
-}
-
-#hvem {
-  position: absolute;
-  top: 4vw;
-  right: 5vw;
-  font-size: 1rem;
-  z-index: 1;
-  text-decoration: none;
-  font-weight: 520;
-  font-family: poppins;
-  background: linear-gradient(to right, rgb(121, 153, 211), rgb(255, 254, 254));
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
-  color: transparent;
-  -webkit-background-clip: text;
-}
-#kontakt {
-  position: absolute;
-  top: 7vw;
-  right: 2vw;
-  font-size: 1rem;
-  z-index: 1;
-  text-decoration: none;
-  font-family: poppins;
-  font-weight: 520;
-  background: linear-gradient(to right, rgb(121, 153, 211), rgb(255, 254, 254));
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
-  color: transparent;
-  -webkit-background-clip: text;
-}
-#hvem:hover {
-  background: linear-gradient(to top, rgb(134, 0, 0), rgb(255, 254, 254));
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
-  color: transparent;
-  -webkit-background-clip: text;
-}
-#kontakt:hover {
-  background: linear-gradient(to top, rgb(134, 0, 0), rgb(255, 254, 254));
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
-  color: transparent;
-  -webkit-background-clip: text;
-}
-
-a {
-  font-family: poppins;
-  background: linear-gradient(to right, rgb(0, 52, 222), rgb(255, 254, 254));
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
-  color: transparent;
-  -webkit-background-clip: text;
 }
 
 .waves {
@@ -159,18 +144,18 @@ span {
 }
 
 .fadeIn {
-  animation: fadeIn 0.5s;
+  animation: fadeIn 0.2s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 }
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateX(100%);
+    transform: translateX(0) scale(0);
   }
   100% {
     opacity: 100;
-    transform: translateX(0);
+    transform: translateX(-20vw) scale(1);
   }
 }
 
