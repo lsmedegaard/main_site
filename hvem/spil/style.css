@@ -1,0 +1,355 @@
+* {
+  margin: 0;
+}
+
+#screen {
+  width: 100vw;
+  height: 56.25vw;
+  position: relative;
+}
+body {
+  overflow: hidden;
+}
+
+#game {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#start {
+}
+
+#game_titelscreen {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(assets/svg/startscreen.svg);
+  background-size: cover;
+}
+
+#rules:hover {
+  transform: scale(0.15);
+}
+#playKnapSprite:hover {
+  transform: scale(1.2);
+}
+
+#playKnapContainer {
+  position: absolute;
+  bottom: -14vw;
+  right: 16vw;
+  transform: scale(0.2);
+  z-index: 999;
+  cursor: pointer;
+}
+
+#playKnapSprite {
+  background-image: url(assets/svg/play.svg);
+  background-size: cover;
+  width: 68vw;
+  height: 55vw;
+}
+
+#lydIcon {
+  background-image: url(assets/svg/lydIcon.svg);
+  background-size: cover;
+  position: absolute;
+  width: 39vw;
+  height: 39vw;
+  top: -8.7vw;
+  right: -7vw;
+  transform: scale(0.1);
+  cursor: pointer;
+}
+.pauseIcon {
+  background-image: url(assets/svg/pauseIcon.svg);
+  background-size: cover;
+  position: absolute;
+  width: 39vw;
+  height: 39vw;
+  top: -8.7vw;
+  right: -7vw;
+  transform: scale(0.1);
+  cursor: pointer;
+}
+
+#rules {
+  background-image: url(assets/svg/rules.svg);
+  background-size: cover;
+  position: absolute;
+  width: 76vw;
+  height: 39vw;
+  top: 31vw;
+  right: 12vw;
+  transform: scale(0.1);
+  z-index: 999;
+  cursor: pointer;
+}
+
+.regler {
+  background-image: url(assets/svg/reglerne.svg);
+  background-size: cover;
+  position: absolute;
+  width: 83vw;
+  height: 69vw;
+  top: -14vw;
+  right: -20vw;
+  transform: scale(0.5);
+  z-index: 999;
+}
+
+.game_over {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(assets/svg/billedeaflost.svg);
+  background-size: cover;
+  z-index: 999;
+}
+.game_over2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(assets/svg/karenloss.svg);
+  background-size: cover;
+  z-index: 999;
+}
+
+.playAgain {
+  background-image: url(assets/svg/playagain.svg);
+  background-size: cover;
+  position: absolute;
+  width: 51vw;
+  height: 39vw;
+  transform: scale(0.3) translate(85vw, 80vw);
+  z-index: 999;
+  cursor: pointer;
+}
+
+.level_complete {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(assets/svg/billedeafwin.svg);
+  background-size: cover;
+  z-index: 999;
+}
+
+#game_background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(assets/svg/baggrund.svg);
+  background-size: cover;
+}
+
+#game_elements {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+#figur1_sprite {
+  background-image: url(assets/svg/figur_e.svg);
+  background-size: cover;
+  width: 20vw;
+  height: 20vw;
+}
+
+#figur2_sprite {
+  background-image: url(assets/svg/figur_b.svg);
+  background-size: cover;
+  width: 20vw;
+  height: 20vw;
+}
+
+#figur3_sprite {
+  background-image: url(assets/svg/figur_c.svg);
+  background-size: cover;
+  width: 20vw;
+  height: 20vw;
+}
+
+.pos0 {
+  right: 94vw;
+  top: 16vw;
+}
+.pos1 {
+  right: 94vw;
+  top: 26vw;
+}
+.pos2 {
+  right: 94vw;
+  top: 36vw;
+}
+
+#figur1_container,
+#figur2_container,
+#figur3_container,
+#figur4_container,
+#figur5_container {
+  position: absolute;
+  z-index: 998;
+  display: none;
+  width: 10vw;
+}
+
+#figur4_sprite {
+  background-image: url(assets/svg/figur_d.svg);
+  background-size: cover;
+  width: 20vw;
+  height: 20vw;
+}
+
+#figur5_sprite {
+  background-image: url(assets/svg/figur_a.svg);
+  background-size: cover;
+  width: 20vw;
+  height: 20vw;
+}
+
+.kunde_ankommer {
+  animation-name: kunde_ankommer;
+  animation-iteration-count: 1;
+}
+
+@keyframes kunde_ankommer {
+  from {
+    transform: translateX(94vw);
+  }
+
+  to {
+    transform: translateX(-6vw);
+  }
+}
+
+#points {
+  position: absolute;
+  top: 36.7vw;
+  left: 11.3vw;
+  color: yellow;
+  width: 2.4rem;
+  font-size: 2rem;
+  font-family: "Baloo Paaji 2";
+  font-weight: 600;
+  text-align: center;
+  font-feature-settings: "tnum";
+}
+
+#point_container {
+  position: absolute;
+  z-index: 998;
+  transform: translate(65vw, 0vw) scale(0.15);
+}
+
+#point_sprite {
+  background-image: url(assets/svg/pointicon.svg);
+  background-size: cover;
+  width: 60vw;
+  height: 22vw;
+  position: relative;
+}
+
+#point_number {
+  position: absolute;
+  top: calc(50% - 11vw);
+  left: 35%;
+  font-size: 20vw;
+  height: 22vw;
+}
+
+#time_board {
+  transform-origin: bottom;
+}
+
+#tid_container {
+  position: absolute;
+  top: 5vw;
+  right: 17vw;
+  z-index: 998;
+  width: 3vw;
+  height: 6vw;
+  border: 1px solid white;
+}
+
+#tid_sprite {
+  width: 3vw;
+  height: 6vw;
+  transform-origin: 50% 100%;
+  top: 5vw;
+  right: 17vw;
+  background-color: lime;
+}
+
+.heart {
+  width: 6.45vw;
+  height: 5.85vw;
+  background-image: url(assets/svg/livispil.svg);
+  background-size: cover;
+  margin-right: 0.5vw;
+  z-index: 999;
+}
+
+#liv {
+  display: flex;
+  position: absolute;
+  transform: scale(0.7);
+  z-index: 999;
+  right: -2vw;
+  top: 3.3vw;
+}
+
+.gray {
+  filter: grayscale(1);
+}
+
+#game_foreground {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(assets/svg/forgrund.svg);
+  background-size: cover;
+}
+
+#game_ui {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.flyv {
+  animation-name: flyv_kf;
+  animation-duration: 1s;
+}
+
+@keyframes flyv_kf {
+  to {
+    transform: translateY(-100vw);
+  }
+}
+
+.time {
+  animation-name: time_kf;
+  animation-duration: 30s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes time_kf {
+  0% {
+    transform: scaleY(1);
+    background-color: lime;
+  }
+
+  50% {
+    transform: scaleY(0.5);
+    background-color: yellow;
+  }
+
+  100% {
+    transform: scaleY(0);
+    background-color: red;
+  }
+}
