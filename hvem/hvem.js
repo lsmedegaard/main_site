@@ -247,7 +247,10 @@ function pickPart(event) {
   const input = document.querySelector("#favColor");
   input.classList.remove("hide")
   const elements = document.querySelectorAll(`#${event.currentTarget.id}`);
-  elements.forEach(element => element.style.fill = 'yellow')
+  elements.forEach(elem => {
+    elem.style.fill = 'green'
+    elem.style.opacity = 0.5
+  })
   elementsToPaint.push(...elements);
 
   

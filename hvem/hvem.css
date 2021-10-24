@@ -126,7 +126,8 @@ body {
 }
 
 #shoeConfig g:hover path {
-  fill: yellow !important;
+  fill: green !important;
+  opacity: 0.3;
 }
 
 #shoeConfig {
