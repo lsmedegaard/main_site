@@ -31,7 +31,7 @@ function manipulateSVG() {
         document.querySelector("#kontakt").classList.remove("hide")
         document.querySelector("#startside").classList.remove("hide")
         document.querySelector("#hvem").classList.remove("hide")
-      }, 500);
+      }, 100);
     }else {
       document.querySelector('#options > img').classList.remove("fadeInActive");
       document.querySelector('#kontakt').classList.add("hide");
@@ -45,9 +45,7 @@ function manipulateSVG() {
 
 }
 
-function options() {
-  document.querySelector("#options > img").classList.add("fadeIn");
-}
+
 const propA = {
   duration: 2000,
   iterations: 1,

@@ -39,12 +39,14 @@ function manipulateSVG() {
   document.querySelector("#menu").addEventListener("click", () => {
     optionsClicked = !optionsClicked
     if (optionsClicked === true) {
-      document.querySelector('#options > img').classList.add("fadeIn");
-      document.querySelector('#options > img').addEventListener("animationend", () => document.querySelector("#kontakt").classList.remove("hide"));
-      document.querySelector('#options > img').addEventListener("animationend", () => document.querySelector("#startside").classList.remove("hide"));
-      document.querySelector('#options > img').addEventListener("animationend", () => document.querySelector("#hvem").classList.remove("hide"));
+      document.querySelector('#options > img').classList.add("fadeInActive");
+      setTimeout(() => {
+        document.querySelector("#kontakt").classList.remove("hide")
+        document.querySelector("#startside").classList.remove("hide")
+        document.querySelector("#hvem").classList.remove("hide")
+      }, 100);
     }else {
-      document.querySelector('#options > img').classList.remove("fadeIn");
+      document.querySelector('#options > img').classList.remove("fadeInActive");
       document.querySelector('#kontakt').classList.add("hide");
       document.querySelector('#hvem').classList.add("hide");
       document.querySelector('#startside').classList.add("hide");

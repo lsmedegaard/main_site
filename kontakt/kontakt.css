@@ -1,0 +1,205 @@
+body {
+  height: 100vh;
+  margin: 0;
+  background: radial-gradient(ellipse at bottom, #100051, #111);
+  overflow: hidden;
+}
+/* MENUEN */
+#mainNav {
+  user-select: none;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  justify-content: flex-end;
+  height: 5vw;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 2s cubic-bezier(0, 1, 1, 1);
+}
+#mainNav > svg {
+  transform: scale(0.6);
+  color: aliceblue;
+  cursor: pointer;
+  height: 5vw;
+}
+#options {
+  position: relative;
+}
+#options > img {
+  position: absolute;
+  width: 20vw;
+  height: 20vw;
+  top: -4vw;
+  right: -25vw;
+  z-index: 2;
+  transition: transform 0.1s ease-in;
+}
+#startside {
+  position: absolute;
+  top: 5.4vw;
+  right: 1.7vw;
+  font-size: 1rem;
+  z-index: 4;
+  text-decoration: none;
+  font-family: poppins;
+  color: rgb(198, 199, 209);
+}
+#hvem {
+  position: absolute;
+  top: 8.8vw;
+  right: 1.7vw;
+  font-size: 1rem;
+  z-index: 4;
+  text-decoration: none;
+  font-family: poppins;
+  color: rgb(198, 199, 209);
+}
+#kontakt {
+  position: absolute;
+  top: 12.3vw;
+  right: 1.7vw;
+  font-size: 1rem;
+  z-index: 4;
+  text-decoration: none;
+  font-family: poppins;
+  color: rgb(198, 199, 209);
+}
+
+#hvem:hover,
+#kontakt:hover,
+#startside:hover {
+  text-shadow: #269912 0.1vw 0.1vw 0.01vw;
+}
+
+/* MENU SLUT */
+
+#kontaktBlok {
+  position: absolute;
+  width: 40vw;
+  height: 20vw;
+  left: 30vw;
+  top: 9vw;
+  background: radial-gradient(ellipse at left, #6b6580, rgb(204, 199, 199));
+  border-radius: 1vw;
+  transition: opacity 1s cubic-bezier(0, 1, 1, 1);
+  z-index: 4;
+}
+#pb {
+  position: absolute;
+  width: 30vw;
+  height: 20vw;
+  top: 9.1vw;
+  left: 14vw;
+  transition: opacity 1s cubic-bezier(0, 1, 1, 1);
+  z-index: 6;
+}
+
+#name {
+  position: absolute;
+  top: 13vw;
+  right: 35vw;
+  z-index: 5;
+  font-family: poppins;
+  font-size: 1.1rem;
+  transition: opacity 1s cubic-bezier(0, 1, 1, 1);
+}
+#mail {
+  position: absolute;
+  top: 18vw;
+  right: 35vw;
+  z-index: 5;
+  font-family: poppins;
+  font-size: 1.1rem;
+  transition: opacity 1s cubic-bezier(0, 1, 1, 1);
+}
+#linkedIn {
+  position: absolute;
+  top: 23vw;
+  right: 35vw;
+  z-index: 5;
+  color: black;
+  font-family: poppins;
+  font-size: 1.1rem;
+  transition: opacity 1s cubic-bezier(0, 1, 1, 1);
+  text-decoration: none;
+}
+
+#container {
+  position: relative;
+}
+#tekstAnimation {
+  margin: 0;
+  font-family: Poppins;
+  font-weight: 900;
+  position: absolute;
+  font-size: 3rem;
+  top: 40%;
+  left: 33%;
+  /* color: rgb(242, 245, 98); */
+}
+
+.hide {
+  opacity: 0;
+}
+#svgWrapper {
+  position: relative;
+}
+#svgWrapper svg {
+  transform: scale(2);
+}
+
+.waves {
+  position: absolute;
+  bottom: 0;
+  aspect-ratio: 8;
+  left: 0;
+  width: 100vw;
+  z-index: -1;
+}
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+.fadeIn {
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+.fadeInActive {
+  opacity: 1;
+  transform: translate(-19.5vw);
+}
+
+a:hover {
+  text-shadow: #269912 0.1vw 0.1vw 0.01vw;
+}
+@media (max-width: 1280px) {
+  html {
+    font-size: 15px;
+  }
+}

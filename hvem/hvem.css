@@ -6,6 +6,7 @@ body {
 }
 /* MENUEN */
 #mainNav {
+  user-select: none;
   display: flex;
   position: fixed;
   top: 0;
@@ -27,17 +28,17 @@ body {
   position: relative;
 }
 #options > img {
-  opacity: 0;
   position: absolute;
   width: 20vw;
   height: 20vw;
   top: -4vw;
   right: -25vw;
+  z-index: 2;
 }
 #startside {
   position: absolute;
   top: 5.4vw;
-  right: 1.8vw;
+  right: 1.7vw;
   font-size: 1rem;
   z-index: 4;
   text-decoration: none;
@@ -47,7 +48,7 @@ body {
 #hvem {
   position: absolute;
   top: 8.8vw;
-  right: 1.72vw;
+  right: 1.7vw;
   font-size: 1rem;
   z-index: 4;
   text-decoration: none;
@@ -57,7 +58,7 @@ body {
 #kontakt {
   position: absolute;
   top: 12.3vw;
-  right: 1.72vw;
+  right: 1.7vw;
   font-size: 1rem;
   z-index: 4;
   text-decoration: none;
@@ -197,6 +198,10 @@ span {
 
 .hide {
   opacity: 0;
+}
+.fadeInActive {
+  opacity: 1;
+  transform: translate(-19.5vw);
 }
 .fadeIn {
   animation: fadeIn 0.2s;

@@ -37,7 +37,7 @@ body {
 #startside {
   position: absolute;
   top: 5.4vw;
-  right: 1.8vw;
+  right: 1.7vw;
   font-size: 1rem;
   z-index: 4;
   text-decoration: none;
@@ -47,7 +47,7 @@ body {
 #hvem {
   position: absolute;
   top: 8.8vw;
-  right: 1.72vw;
+  right: 1.7vw;
   font-size: 1rem;
   z-index: 4;
   text-decoration: none;
@@ -57,7 +57,7 @@ body {
 #kontakt {
   position: absolute;
   top: 12.3vw;
-  right: 1.72vw;
+  right: 1.7vw;
   font-size: 1rem;
   z-index: 4;
   text-decoration: none;
@@ -92,10 +92,6 @@ body {
   color: transparent;
   -webkit-background-clip: text;
 } */
-
-#tekstAnimation span {
-  /* color: rgb(0, 0, 255); */
-}
 
 .hide {
   opacity: 0;
@@ -150,7 +146,7 @@ span {
 
 .fadeInActive {
   opacity: 1;
-  transform: translate(-20vw);
+  transform: translate(-19.5vw);
 }
 
 .fadeFromBelow {
